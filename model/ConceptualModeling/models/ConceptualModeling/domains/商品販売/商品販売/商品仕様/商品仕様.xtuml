@@ -1,0 +1,105 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	'商品仕様',
+	2,
+	'PS',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_BATTR
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_ATTR
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	"00000000-0000-0000-0000-000000000000",
+	'商品仕様ID',
+	'',
+	'',
+	'商品仕様ID',
+	0,
+	"6aed8271-ddf8-4987-b1b0-514894ebf78e",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("6aed8271-ddf8-4987-b1b0-514894ebf78e",
+	"00000000-0000-0000-0000-000000000000",
+	'商品コード',
+	'',
+	'',
+	'../../datatypes/datatypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("e54378bc-990d-421f-8744-ddbd46b978fd",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_BATTR
+	VALUES ("e54378bc-990d-421f-8744-ddbd46b978fd",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_ATTR
+	VALUES ("e54378bc-990d-421f-8744-ddbd46b978fd",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	"305f0453-b843-421b-a12b-02f35147d4ac",
+	'商品名',
+	'',
+	'',
+	'商品名',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("7767d394-c355-42b1-9592-57512a61eb55",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_BATTR
+	VALUES ("7767d394-c355-42b1-9592-57512a61eb55",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_ATTR
+	VALUES ("7767d394-c355-42b1-9592-57512a61eb55",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	"e54378bc-990d-421f-8744-ddbd46b978fd",
+	'単価',
+	'',
+	'',
+	'単価',
+	0,
+	"84d9ad36-def5-4536-92bf-321741d7a2ce",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("84d9ad36-def5-4536-92bf-321741d7a2ce",
+	"00000000-0000-0000-0000-000000000000",
+	'円',
+	'',
+	'',
+	'../../datatypes/datatypes.xtuml');
+INSERT INTO O_ID
+	VALUES (0,
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_OIDA
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	0,
+	'商品仕様ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO O_ID
+	VALUES (2,
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71");
+INSERT INTO PE_PE
+	VALUES ("6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	1,
+	"872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	"d8cc6780-6c10-4b5a-a59f-def04243d40e",
+	'商品販売',
+	'',
+	0,
+	'../商品販売.xtuml');

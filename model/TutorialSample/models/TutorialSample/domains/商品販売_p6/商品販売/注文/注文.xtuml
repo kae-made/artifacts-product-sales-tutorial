@@ -1,0 +1,223 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	'注文',
+	3,
+	'O',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("3f2c445d-de5a-4654-803c-2d442a8207a3",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_BATTR
+	VALUES ("3f2c445d-de5a-4654-803c-2d442a8207a3",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_ATTR
+	VALUES ("3f2c445d-de5a-4654-803c-2d442a8207a3",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"00000000-0000-0000-0000-000000000000",
+	'注文ID',
+	'',
+	'',
+	'注文ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000005",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("88f57357-be85-473f-9294-b7c7bab25666",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_BATTR
+	VALUES ("88f57357-be85-473f-9294-b7c7bab25666",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_ATTR
+	VALUES ("88f57357-be85-473f-9294-b7c7bab25666",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"3f2c445d-de5a-4654-803c-2d442a8207a3",
+	'個数',
+	'',
+	'',
+	'個数',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("0acf439b-8022-409c-8054-13269ca3d251",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_BATTR
+	VALUES ("0acf439b-8022-409c-8054-13269ca3d251",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_ATTR
+	VALUES ("0acf439b-8022-409c-8054-13269ca3d251",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"88f57357-be85-473f-9294-b7c7bab25666",
+	'金額',
+	'',
+	'',
+	'金額',
+	0,
+	"bdff257d-02c4-47a4-9c08-860c67d7a476",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("bdff257d-02c4-47a4-9c08-860c67d7a476",
+	"00000000-0000-0000-0000-000000000000",
+	'円',
+	'',
+	'',
+	'../../datatypes/datatypes.xtuml');
+INSERT INTO O_REF
+	VALUES ("ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"3c337e2d-d49e-4926-8679-02bedd01bdf5",
+	0,
+	"c9e6f632-8c67-4821-ae34-50c67cdc409f",
+	"3cf04058-e84a-4521-9168-5a6128b06ac8",
+	"b1dd8923-ffe7-47d9-9e81-b6c49f23044a",
+	"a5d774e9-da92-466b-a882-16a584fc70db",
+	"058f67ef-c523-41a2-b4c3-18a218863488",
+	"26df86d6-8975-45a9-8b22-9d7cdd86006c",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'顧客',
+	'顧客ID',
+	'R1.''発注者''');
+INSERT INTO R_RGO_PROXY
+	VALUES ("ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"3cf04058-e84a-4521-9168-5a6128b06ac8",
+	"b1dd8923-ffe7-47d9-9e81-b6c49f23044a",
+	'../商品販売.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("c9e6f632-8c67-4821-ae34-50c67cdc409f",
+	"3c337e2d-d49e-4926-8679-02bedd01bdf5",
+	0,
+	"3cf04058-e84a-4521-9168-5a6128b06ac8",
+	"a5d774e9-da92-466b-a882-16a584fc70db",
+	'../商品販売.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("058f67ef-c523-41a2-b4c3-18a218863488",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"c9e6f632-8c67-4821-ae34-50c67cdc409f",
+	"3c337e2d-d49e-4926-8679-02bedd01bdf5",
+	1,
+	'顧客ID');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("c9e6f632-8c67-4821-ae34-50c67cdc409f",
+	"3c337e2d-d49e-4926-8679-02bedd01bdf5",
+	'../顧客/顧客.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("058f67ef-c523-41a2-b4c3-18a218863488",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"0acf439b-8022-409c-8054-13269ca3d251",
+	'顧客ID',
+	'',
+	'',
+	'顧客ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_REF
+	VALUES ("ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"06e91ff0-fb90-41f8-a211-2d0b83b9a203",
+	0,
+	"2ca21e5f-16ac-4692-8817-45703126a895",
+	"3cf04058-e84a-4521-9168-5a6128b06ac8",
+	"b1dd8923-ffe7-47d9-9e81-b6c49f23044a",
+	"95314883-9c91-4937-aa29-ee40b7c4dd46",
+	"c02af409-8532-4c35-bcab-79f4545b55dd",
+	"62766819-e438-499f-b125-ea5b6e5746f2",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'商品仕様',
+	'商品仕様ID',
+	'R1.''購入予約''');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("2ca21e5f-16ac-4692-8817-45703126a895",
+	"06e91ff0-fb90-41f8-a211-2d0b83b9a203",
+	0,
+	"3cf04058-e84a-4521-9168-5a6128b06ac8",
+	"95314883-9c91-4937-aa29-ee40b7c4dd46",
+	'../商品販売.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("c02af409-8532-4c35-bcab-79f4545b55dd",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"2ca21e5f-16ac-4692-8817-45703126a895",
+	"06e91ff0-fb90-41f8-a211-2d0b83b9a203",
+	1,
+	'商品仕様ID');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("2ca21e5f-16ac-4692-8817-45703126a895",
+	"06e91ff0-fb90-41f8-a211-2d0b83b9a203",
+	'../商品仕様/商品仕様.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("c02af409-8532-4c35-bcab-79f4545b55dd",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"058f67ef-c523-41a2-b4c3-18a218863488",
+	'商品仕様ID',
+	'',
+	'',
+	'商品仕様ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("47082639-8899-4e8c-915a-885e6df7eacb",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_BATTR
+	VALUES ("47082639-8899-4e8c-915a-885e6df7eacb",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_ATTR
+	VALUES ("47082639-8899-4e8c-915a-885e6df7eacb",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"c02af409-8532-4c35-bcab-79f4545b55dd",
+	'発注日',
+	'',
+	'',
+	'発注日',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_OIDA
+	VALUES ("3f2c445d-de5a-4654-803c-2d442a8207a3",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	0,
+	'注文ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_OIDA
+	VALUES ("058f67ef-c523-41a2-b4c3-18a218863488",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	1,
+	'顧客ID');
+INSERT INTO O_OIDA
+	VALUES ("c02af409-8532-4c35-bcab-79f4545b55dd",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	1,
+	'商品仕様ID');
+INSERT INTO O_ID
+	VALUES (2,
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO PE_PE
+	VALUES ("ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	1,
+	"6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	"f4d1d2f1-4232-4d9a-8e01-d1f1278771ca",
+	'商品販売',
+	'',
+	0,
+	'../商品販売.xtuml');

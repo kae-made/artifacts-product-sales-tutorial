@@ -1,0 +1,62 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e3fba708-f48c-4dd7-9e51-d342ac59fc46",
+	'配送会社',
+	12,
+	'DC',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("c0b62199-9ae4-4a94-b3bd-c538b48096b2",
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46");
+INSERT INTO O_BATTR
+	VALUES ("c0b62199-9ae4-4a94-b3bd-c538b48096b2",
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46");
+INSERT INTO O_ATTR
+	VALUES ("c0b62199-9ae4-4a94-b3bd-c538b48096b2",
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46",
+	"00000000-0000-0000-0000-000000000000",
+	'取引会社ID',
+	'',
+	'',
+	'取引会社ID',
+	0,
+	"e2978e82-90a2-4d02-8611-453b1df7b58b",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("e2978e82-90a2-4d02-8611-453b1df7b58b",
+	"00000000-0000-0000-0000-000000000000",
+	'取引会社コード',
+	'',
+	'',
+	'../../datatypes/datatypes.xtuml');
+INSERT INTO O_ID
+	VALUES (0,
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46");
+INSERT INTO O_OIDA
+	VALUES ("c0b62199-9ae4-4a94-b3bd-c538b48096b2",
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46",
+	0,
+	'取引会社ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46");
+INSERT INTO O_ID
+	VALUES (2,
+	"e3fba708-f48c-4dd7-9e51-d342ac59fc46");
+INSERT INTO PE_PE
+	VALUES ("e3fba708-f48c-4dd7-9e51-d342ac59fc46",
+	1,
+	"872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	"d8cc6780-6c10-4b5a-a59f-def04243d40e",
+	'商品販売',
+	'',
+	0,
+	'../商品販売.xtuml');

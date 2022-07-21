@@ -1,0 +1,88 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	'一品物商品仕様',
+	4,
+	'OIPS',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_REF
+	VALUES ("c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	0,
+	"305f0453-b843-421b-a12b-02f35147d4ac",
+	"d2c2fbe5-527d-47fc-a632-441f3f758aea",
+	"942a2d54-ec7f-44c4-b064-66f259b73dd7",
+	"2435192f-d644-4e56-a43d-5c47394ac50c",
+	"e1af2c7a-0dfa-4c4f-9c02-5d2d01137f74",
+	"1d2301a3-f1d9-4c87-b398-ff8ed04cbaa6",
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'商品仕様',
+	'商品仕様ID',
+	'R2');
+INSERT INTO R_RGO_PROXY
+	VALUES ("c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	"d2c2fbe5-527d-47fc-a632-441f3f758aea",
+	"942a2d54-ec7f-44c4-b064-66f259b73dd7",
+	'../商品販売.xtuml');
+INSERT INTO O_RTIDA_PROXY
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	0,
+	"d2c2fbe5-527d-47fc-a632-441f3f758aea",
+	"2435192f-d644-4e56-a43d-5c47394ac50c",
+	'../商品販売.xtuml');
+INSERT INTO O_RATTR
+	VALUES ("e1af2c7a-0dfa-4c4f-9c02-5d2d01137f74",
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	"305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	1,
+	'商品仕様ID');
+INSERT INTO O_BATTR_PROXY
+	VALUES ("305f0453-b843-421b-a12b-02f35147d4ac",
+	"6aecfd1d-0d6f-4460-aa23-eb335bc08f71",
+	'../商品仕様/商品仕様.xtuml');
+INSERT INTO O_ATTR
+	VALUES ("e1af2c7a-0dfa-4c4f-9c02-5d2d01137f74",
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	"00000000-0000-0000-0000-000000000000",
+	'商品仕様ID',
+	'',
+	'',
+	'商品仕様ID',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000007",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406");
+INSERT INTO O_OIDA
+	VALUES ("e1af2c7a-0dfa-4c4f-9c02-5d2d01137f74",
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	0,
+	'商品仕様ID');
+INSERT INTO O_ID
+	VALUES (1,
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406");
+INSERT INTO O_ID
+	VALUES (2,
+	"c5b4dc3b-1f77-4c94-b967-701b2e8db406");
+INSERT INTO PE_PE
+	VALUES ("c5b4dc3b-1f77-4c94-b967-701b2e8db406",
+	1,
+	"872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("872e0a6c-5089-447c-ba06-e8159712e9ce",
+	"00000000-0000-0000-0000-000000000000",
+	"d8cc6780-6c10-4b5a-a59f-def04243d40e",
+	'商品販売',
+	'',
+	0,
+	'../商品販売.xtuml');
