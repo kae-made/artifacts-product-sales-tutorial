@@ -180,7 +180,25 @@ INSERT INTO O_ATTR
 	'',
 	'発注日',
 	0,
-	"ba5eda7a-def5-0000-0000-000000000010",
+	"ba5eda7a-def5-0000-0000-00000000000e",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("470d66a3-a2a4-4a3b-ac01-a8e9916eb93b",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_BATTR
+	VALUES ("470d66a3-a2a4-4a3b-ac01-a8e9916eb93b",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7");
+INSERT INTO O_ATTR
+	VALUES ("470d66a3-a2a4-4a3b-ac01-a8e9916eb93b",
+	"ea678bed-e5f4-4eda-a81a-187af60fc8d7",
+	"47082639-8899-4e8c-915a-885e6df7eacb",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
 	'',
 	'');
 INSERT INTO O_ID

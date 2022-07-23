@@ -1333,6 +1333,189 @@ INSERT INTO PE_PE
 	"6a88ff58-0190-474a-9b4c-f000097b517b",
 	"00000000-0000-0000-0000-000000000000",
 	9);
+INSERT INTO S_SYNC
+	VALUES ("57bdc78b-f06d-4501-8ecd-ed4efc2a8a8c",
+	"00000000-0000-0000-0000-000000000000",
+	'CreateInstances',
+	'',
+	'CREATE OBJECT INSTANCE customer1 OF C;
+customer1.顧客名 = "北条義時";
+customer1.住所 = "鎌倉市西御門2‐5";
+
+CREATE OBJECT INSTANCE customer2 OF C;
+customer2.顧客名 = "梶原景時";
+customer2.住所 = "高座郡寒川町一之宮8-6-6";
+
+CREATE OBJECT INSTANCE customer3 OF C;
+customer3.顧客名 = "和田義盛";
+customer3.住所 = "三浦市初声町和田";
+
+CREATE OBJECT INSTANCE ps1 of PS;
+ps1.商品名 = "かわらけ";
+ps1.単価 = 100;
+CREATE OBJECT INSTANCE ips1 of IPS;
+RELATE ps1 to ips1 ACROSS R2;
+かわらけの在庫数 = 3;
+index1 = 0;
+WHILE index1 < かわらけの在庫数
+	CREATE OBJECT INSTANCE ip of IP;
+	ip.仕入れ日 = TIM::create_date( day:22, hour:10, minute:0, month:7, second:0, year:2022 );
+	RELATE ips1 TO ip ACROSS R3;
+	index1 = index1 + 1;
+END WHILE;
+
+CREATE OBJECT INSTANCE ps2 of PS;
+ps2.商品名 = "弓矢";
+ps2.単価 = 2500;
+CREATE OBJECT INSTANCE ips2 of IPS;
+弓矢の在庫数 = 10;
+index2 = 0;
+WHILE index2 < 弓矢の在庫数
+	CREATE OBJECT INSTANCE ip OF IP;
+	ip.仕入れ日 = TIM::create_date( day:21, hour:14, minute:0, month:6, second:0, year:2022 );
+	RELATE ips1 TO ip ACROSS R3;
+	index2 = index2 + 1;
+END WHILE; ',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0,
+	1);
+INSERT INTO PE_PE
+	VALUES ("57bdc78b-f06d-4501-8ecd-ed4efc2a8a8c",
+	1,
+	"6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("54c3cdf7-0546-441c-bf6d-9409b9bca13a",
+	"00000000-0000-0000-0000-000000000000",
+	'TestQuery',
+	'',
+	'SELECT MANY productSpecSet FROM INSTANCES OF PS;
+FOR EACH productSpec IN productSpecSet
+	商品名 = productSpec.商品名;
+	単価 = productSpec.単価;
+	
+	SELECT ONE inventryProductSpec RELATED BY productSpec->IPS[R2];
+	SELECT ONE oneProductSpec RELATED BY productSpec->OIPS[R2];
+	IF NOT_EMPTY inventryProductSpec
+		SELECT MANY inventrySet RELATED BY inventryProductSpec->IP[R3.''現品''];
+		在庫数 = CARDINALITY inventrySet;
+	ELSE
+		// oneProductSpec is not empty
+		SELECT ONE oneProduct RELATED BY oneProductSpec->P[R4.''現品''];
+	END IF;
+END FOR;',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0,
+	2);
+INSERT INTO PE_PE
+	VALUES ("54c3cdf7-0546-441c-bf6d-9409b9bca13a",
+	1,
+	"6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("afe2e4e5-fe72-44b6-9e22-ff6219384cad",
+	"00000000-0000-0000-0000-000000000000",
+	'CreateOperation',
+	'',
+	'found = false;
+SELECT ANY customer FROM INSTANCES OF C WHERE SELECTED.顧客ID == param.顧客ID;
+SELECT ANY productSpec FROM INSTANCES OF PS WHERE SELECTED.商品仕様ID == param.商品仕様ID;
+IF NOT_EMPTY customer AND NOT_EMPTY productSpec
+	found = TRUE;
+	GENERATE O1:注文発生(顧客ID: param.顧客ID, 商品仕様ID:param.商品仕様ID, 個数:param.個数) TO O CREATOR;
+END IF;
+RETURN found;
+',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'',
+	0,
+	3);
+INSERT INTO S_SPARM
+	VALUES ("8c139dab-8de0-486d-aabd-b2d6439f55ae",
+	"afe2e4e5-fe72-44b6-9e22-ff6219384cad",
+	'顧客ID',
+	"ba5eda7a-def5-0000-0000-000000000005",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("9f031154-dd59-473d-9160-64b5cdb9fd3f",
+	"afe2e4e5-fe72-44b6-9e22-ff6219384cad",
+	'商品仕様ID',
+	"ba5eda7a-def5-0000-0000-000000000005",
+	0,
+	'',
+	"8c139dab-8de0-486d-aabd-b2d6439f55ae",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("92c00204-0f2a-4ce7-9a27-918bf4535686",
+	"afe2e4e5-fe72-44b6-9e22-ff6219384cad",
+	'個数',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"9f031154-dd59-473d-9160-64b5cdb9fd3f",
+	'');
+INSERT INTO PE_PE
+	VALUES ("afe2e4e5-fe72-44b6-9e22-ff6219384cad",
+	1,
+	"6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
+INSERT INTO S_SYNC
+	VALUES ("950b7307-d382-428c-bdd9-e98c8074ddce",
+	"00000000-0000-0000-0000-000000000000",
+	'InventryGoodsDelivered',
+	'',
+	'SELECT ANY inventryProductSpec FROM INSTANCES OF IPS WHERE SELECTED.商品仕様ID == param.商品仕様ID;
+IF NOT_EMPTY inventryProductSpec
+	index = 0;
+	WHILE index < param.納品数;
+		CREATE object instance ip OF IP;
+		RELATE ip TO inventryProductSpec ACROSS R3;
+	END WHILE;
+	SELECT ANY order RELATED BY inventryProductSpec->PS[R2]->O[R1] WHERE SELECTED.個数 < inventryProductSpec.在庫数;
+	IF NOT_EMPTY order
+		GENERATE O2:在庫引当完了 TO order;
+	END IF;
+END IF;',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'',
+	0,
+	4);
+INSERT INTO S_SPARM
+	VALUES ("c14d0c22-c28b-463f-9da5-dd6d5fc5d5ff",
+	"950b7307-d382-428c-bdd9-e98c8074ddce",
+	'商品仕様ID',
+	"ba5eda7a-def5-0000-0000-000000000005",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_SPARM
+	VALUES ("893ac266-e574-4039-abf3-0c53c32a8a38",
+	"950b7307-d382-428c-bdd9-e98c8074ddce",
+	'納品数',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"c14d0c22-c28b-463f-9da5-dd6d5fc5d5ff",
+	'');
+INSERT INTO PE_PE
+	VALUES ("950b7307-d382-428c-bdd9-e98c8074ddce",
+	1,
+	"6a88ff58-0190-474a-9b4c-f000097b517b",
+	"00000000-0000-0000-0000-000000000000",
+	1);
 INSERT INTO PE_PE
 	VALUES ("6a88ff58-0190-474a-9b4c-f000097b517b",
 	1,
